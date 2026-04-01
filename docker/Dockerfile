@@ -56,7 +56,6 @@ COPY ./backend/pyproject.toml /repo/backend/
 COPY ./README.md /repo/
 
 RUN uv sync --no-install-project
-RUN uv pip install pytz --system
 
 # Install our package (backend)
 COPY ./backend/beets_flask/ /repo/backend/beets_flask/
@@ -66,6 +65,7 @@ COPY ./backend/launch_watchdog_worker.py /repo/backend/
 COPY ./backend/launch_db_init.py /repo/backend/
 
 RUN uv sync
+RUN uv pip install pytz --system
 
 # Extract version from pyproject.toml
 RUN mkdir -p /version
