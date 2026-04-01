@@ -40,5 +40,5 @@ uvicorn beets_flask.server.app:create_app --port 5001 \
     --workers 4 \
     --use-colors \
     --log-level info \
-    --no-access-log
+    --no-access-log \
     --timout-worker-healthcheck 30
