@@ -37,7 +37,7 @@ redis-cli FLUSHALL >/dev/null 2>&1
 uvicorn beets_flask.server.app:create_app --port 5001 \
     --host 0.0.0.0 \
     --factory \
-    --workers 4 \
+    --workers 1 \
     --use-colors \
     --log-level info \
     --no-access-log \
